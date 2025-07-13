@@ -1,0 +1,53 @@
+{
+  "name": "fivem-server-monitor-pro",
+  "version": "2.0.0",
+  "main": "app.js",
+  "description": "FiveM Monitor Pro - Système de monitoring professionnel en temps réel pour serveurs FiveM avec interface moderne et API REST complète",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js --watch src --watch config --watch public",
+    "prod": "NODE_ENV=production node app.js",
+    "test": "echo \"Tests à implémenter\" && exit 0",
+    "lint": "echo \"Linting à implémenter\" && exit 0",
+    "logs": "tail -f logs/combined.log",
+    "clean": "node -e \"const fs=require('fs'),path='logs';fs.existsSync(path)&&fs.rmSync(path,{recursive:true});console.log('Logs nettoyés')\"",
+    "setup": "node -e \"const fs=require('fs');['logs','data'].forEach(d=>!fs.existsSync(d)&&fs.mkdirSync(d));console.log('Dossiers créés')\""
+  },
+  "keywords": [
+    "fivem",
+    "server",
+    "monitor",
+    "nodejs",
+    "express",
+    "dashboard",
+    "api",
+    "real-time",
+    "statistics",
+    "players",
+    "activity",
+    "gaming"
+  ],
+  "author": "FiveM Community",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fivem-community/server-monitor-pro"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.10.0",
+    "compression": "^1.8.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "helmet": "^8.1.0",
+    "node-cron": "^4.2.1",
+    "rate-limiter-flexible": "^7.1.1",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
